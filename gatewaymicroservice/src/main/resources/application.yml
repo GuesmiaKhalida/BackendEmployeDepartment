@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: r1
+          uri: lb://departmentmicroservice
+          predicates: Path=/departments/**
+        - id: r2
+          uri: lb://employemicroservice
+          predicates: Path=/employes/**
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
